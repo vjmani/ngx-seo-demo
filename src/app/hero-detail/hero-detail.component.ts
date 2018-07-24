@@ -2,14 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero }         from '../hero';
+import { HeroService }  from '../hero.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { MetaService } from '../services/meta.service';
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.scss']
+  styleUrls: [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
@@ -18,14 +18,14 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private title: Title,
+    private title: Title, 
     private metaService: MetaService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.title.setTitle('SEO Demo Headless: Heroes Details');
-    this.metaService.setMeta('title', 'SEO Demo Headless: Heroes Details');
-    this.metaService.setMeta('description', 'This is a sample SEO application for Headless Angular application and this is Heroes Details page.');
+    this.title.setTitle('Hero Detail');
+    this.metaService.setMeta('title','Hero Detail');
+    this.metaService.setMeta('description','Heroe Detail: Tours of Heroes');
     this.getHero();
   }
 
@@ -39,7 +39,7 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
-  save(): void {
+ save(): void {
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());
   }

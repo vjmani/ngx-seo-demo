@@ -1,12 +1,13 @@
-<section id="search-component">
+<div id="search-component">
   <h4>Hero Search</h4>
-  <input #searchBox class="search-box" (keyup)="search(searchBox.value)" />
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
   <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async">
+    <li *ngFor="let hero of heroes$ | async" >
       <a routerLink="/detail/{{hero.id}}">
         {{hero.name}}
       </a>
     </li>
   </ul>
-  <noscript>Your browser is not compatible to view the page.</noscript>
-</section>
+</div>

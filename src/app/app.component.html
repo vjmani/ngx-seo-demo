@@ -1,9 +1,7 @@
-
-<app-header></app-header>
-
-<div class='main-container'>
-  <router-outlet></router-outlet>
-</div>
-
-<app-footer></app-footer>
-
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
